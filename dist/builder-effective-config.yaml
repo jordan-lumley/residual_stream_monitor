@@ -1,0 +1,7 @@
+directories:
+  output: dist
+  buildResources: build
+appId: ces.apps
+win:
+  target: msi
+electronVersion: 8.2.1

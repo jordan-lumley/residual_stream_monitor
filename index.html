@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+  <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.css">
+  <link rel="stylesheet" href="./node_modules/material-icons/iconfont/material-icons.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <title>Residuals</title>
+</head>
+
+<body>
+  <div class="main-loader">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="errorWindow">
+    <div id="errorContents"></div>
+  </div>
+
+  <nav class="blue-grey">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Residual Stream Import</a>
+      <button id="resetBtn" class="right btn red">RESET</button>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            Step 1: Upload Files To Consolidate
+
+            <span class="right">
+              <i id="step1StatusText">Incomplete</i>
+              <i class="material-icons warning-icon icon-with-tt" id="step1StatusIcon">warning</i>
+            </span>
+          </span>
+          <div id="step1CardContentWrapper">
+            <ul class="collection blue-text" id="selectedFilesToUpload">
+
+            </ul>
+            <div>
+              <i>Select the CSV files needed to consolidate</i>
+            </div>
+
+            <button class="btn" id="upload">Add Csv Files</button>
+
+            <a id="consolidateFiles" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                class="material-icons">play_arrow</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            Step 2: Import to Database
+
+            <span class="right">
+              <i id="step2StatusText">Incomplete</i>
+              <i class="material-icons warning-icon icon-with-tt" id="step2StatusIcon">warning</i>
+            </span>
+          </span>
+          <div id="step2CardContentWrapper">
+
+            <ul class="collection blue-text">
+
+            </ul>
+            <div>
+              <i>The tool imports all the records from the consolidated CSV into the database</i>
+            </div>
+
+            <a id="beginDbImport" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                class="material-icons">play_arrow</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            Step 3: Run Nates Query
+
+            <span class="right">
+              <i id="step3StatusText">Incomplete</i>
+              <i class="material-icons warning-icon icon-with-tt" id="step3StatusIcon">warning</i>
+            </span>
+          </span>
+
+          <div id="step3CardContentWrapper">
+
+            <ul class="collection blue-text">
+
+            </ul>
+
+            <div>
+              <i>The tool runs the queries to set volume factors</i>
+            </div>
+
+            <a id="runNatesQuery" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                class="material-icons">play_arrow</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            Step 4: Build Results
+
+            <span class="right">
+              <i id="step4StatusText">Incomplete</i>
+              <i class="material-icons warning-icon icon-with-tt" id="step4StatusIcon">warning</i>
+            </span>
+          </span>
+          <div id="step4CardContentWrapper">
+
+            <ul class="collection blue-text">
+
+            </ul>
+
+            <div>
+              <i>Gets the sum of the amounts needed</i>
+            </div>
+
+            <a id="buildResults" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                class="material-icons">play_arrow</i></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./node_modules/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="./node_modules/materialize-css/dist/js/materialize.js"></script>
+</body>
+
+</html>
