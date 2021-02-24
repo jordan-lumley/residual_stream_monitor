@@ -2,7 +2,7 @@ const pgp = require('pg-promise')();
 const queries = require('./Queries');
 
 const dbConfig = {
-  host: '34.202.214.255',
+  host: '18.206.38.42',
   port: 5432,
   database: 'meridianstar',
   user: 'postgres',
