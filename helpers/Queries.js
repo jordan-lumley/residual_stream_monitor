@@ -160,7 +160,8 @@ where (
   and crd.Date >= to_char(cast((select date_trunc('month', current_date) - interval '1 month') as date), 'MM/DD/YYYY')::TIMESTAMP
 )) as f
 WHERE f.indicator = '${indicator}'
-`};
+`;
+};
 
 exports.selectResultsFull = () => {
   return `
@@ -232,4 +233,5 @@ where (
   ) = '2900'
   and crd.Date >= to_char(cast((select date_trunc('month', current_date) - interval '1 month') as date), 'MM/DD/YYYY')::TIMESTAMP
 )
-`};
+`;
+};
